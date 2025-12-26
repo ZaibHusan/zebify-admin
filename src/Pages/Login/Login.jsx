@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from 'react'
 import "./Login.css"
 import { appcontext } from '../../admincontext/Admincontext';
 import { toast } from 'react-toastify';
+import { BASE } from '../../utils/api.js';
 export default function Login() {
     const [formData, setFormData] = useState({});
     const { Token, setToken } = useContext(appcontext);
@@ -22,7 +23,7 @@ export default function Login() {
     const apiCall = async () => {
         try {
             const { gmail, password } = formData;
-            const api_url = import.meta.env.VITE_BACKEND_URL + "/api/admin"
+            const api_url = `${BASE}/api/admin`
             const call = await fetch(api_url, {
                 method: "POST",
                 headers: {

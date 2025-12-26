@@ -3,25 +3,26 @@ import "./Order.css"
 import { assets } from '../../assets/assets'
 import { useState } from 'react'
 import { useEffect } from 'react';
+import { BASE } from '../../utils/api.js';
 export default function Order() {
   const [Orders, setOrders] = useState([]);
   const orderfetching = async () => {
     try {
-      const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/order/getorderadmin");
+      const response = await fetch(`${BASE}/api/order/getorderadmin`);
       const data = await response.json();
       if (data.success) {
         setOrders(data.ordersadmin);
       } else {
-        console.log(data.messege);
+        console.log("the error is in the getorder", data.messege);
       }
     } catch (error) {
-      console.log(error);
+      console.log("the error is", error);
     }
   }
 
   const statuschange = async ({ e, id }) => {
     const status = e.target.value;
-    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/admin/orderstatusupdate`, {
+    const response = await fetch(`${BASE}/api/admin/orderstatusupdate`, {
       method: "PUT",
       headers: {
         "content-type": "application/json"
@@ -52,7 +53,7 @@ export default function Order() {
         </thead>
 
         <tbody>
-          {Orders.reverse().map((order, index) => (
+         {[...Orders].reverse().map((order, index) => (
             <tr key={index}>
               <td><img src={assets.parcel_icon} alt="" /></td>
               <td>{order.name}</td>

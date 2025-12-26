@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import "./List.css"
 import { assets } from '../../assets/assets'
 import { appcontext } from '../../admincontext/Admincontext';
+import { BASE } from '../../utils/api.js';
 export default function List() {
 
   const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ export default function List() {
   const [deletIndex, setdeletIndex] = useState();
   const { Token } = useContext(appcontext);
   const fetchinglistproduct = async () => {
-    const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/products/getproducts');
+    const response = await fetch(`${BASE}/api/products/getproducts`);
     const data = await response.json();
     const productData = data.productData;
     setProducts(productData);
@@ -21,7 +22,7 @@ export default function List() {
     setProductDelete(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/products/deleteproduct/${id}`, {
+      const response = await fetch(`${BASE}/api/products/deleteproduct/${id}`, {
         method: "DELETE",
         headers: {
           "Authorization": `Bearer ${Token}`

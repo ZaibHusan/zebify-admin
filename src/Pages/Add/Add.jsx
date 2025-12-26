@@ -3,6 +3,7 @@ import './Add.css'
 import { assets } from '../../assets/assets'
 import { toast } from 'react-toastify';
 import { appcontext } from '../../admincontext/Admincontext';
+import { BASE } from '../../utils/api.js';
 export default function Add() {
     const { Token } = useContext(appcontext);
     const [Image, setImage] = useState({
@@ -89,7 +90,7 @@ export default function Add() {
 
 
         // let create a virrable for data fetching?
-            const add = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/products/addproducts", {
+            const add = await fetch(`${BASE}/api/products/addproducts`, {
                 headers: {
                     "Authorization": `Bearer ${Token}`
                 },
