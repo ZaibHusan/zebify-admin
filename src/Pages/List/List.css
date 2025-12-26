@@ -1,0 +1,137 @@
+/* Container */
+.List {
+    width: 95%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.List p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Table Styling */
+.List table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    /* Space between rows for card effect */
+    font-size: 14px;
+}
+
+/* Table Header */
+.List th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 15px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Table Cells */
+.List td {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    text-align: center;
+    border-radius: 8px;
+    vertical-align: middle;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Row Hover Effect */
+.List tbody tr:hover td {
+    background-color: #e6f0ff;
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+/* Images in Table */
+.List td img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Close/Delete Icon */
+#Close {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#Close:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .List table,
+    .List th,
+    .List td {
+        font-size: 12px;
+    }
+
+    .List td img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+.list_button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.list_button button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.list_button button:last-child {
+    background-color: #dc3545;
+}
+
+.list_button button:hover {
+    background-color: #0056b3;
+}
+
+.list_button button:last-child:hover {
+    background-color: #c82333;
+}
+
+
+/* lets eidt delet loader */
+
+.deletloader .loader {
+    width: 30px;
+    height: 30px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid red;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

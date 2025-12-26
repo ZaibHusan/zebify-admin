@@ -1,0 +1,197 @@
+/* Container */
+.Add {
+    width: 90%;
+    max-width: 1000px;
+    padding: 20px 30px;
+    background: #f5f6fa;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
+
+/* Section Headings */
+.Add h3, 
+.Add p {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Upload Area */
+.Add_Upload {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Upload_images {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.Upload_images img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px dashed #007bff;
+    transition: all 0.3s ease;
+}
+
+.Upload_images img:hover {
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Input hidden */
+.Upload_images input {
+    display: none;
+}
+
+/* Text Inputs */
+.Add_name input,
+.Add_decription textarea,
+.Add_price_category input,
+.Add_price_category select {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.Add_name input:focus,
+.Add_decription textarea:focus,
+.Add_price_category input:focus,
+.Add_price_category select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Textarea */
+.Add_decription textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Price & Category Flex */
+.Add_price_category {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.Add_price_category > div {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Checkbox styling */
+.Add_isBestseller input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff;
+    cursor: pointer;
+}
+
+
+.Add_isBestseller {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+/* Submit Button */
+.Submit_b {
+    text-align: center;
+    margin-top: 30px;
+    justify-self: flex-start;
+}
+
+.Submit_b button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Submit_b button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .Add_price_category {
+        flex-direction: column;
+    }
+    .Upload_images {
+        justify-content: center;
+    }
+}
+
+
+/* page loading */
+
+
+.loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-bag {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+/* Bag body */
+.bag {
+    width: 60px;
+    height: 45px;
+    background: #007bff;
+    border-radius: 5px 5px 10px 10px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Bag handle */
+.handle {
+    width: 30px;
+    height: 15px;
+    border: 4px solid #007bff;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}

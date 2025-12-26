@@ -1,0 +1,99 @@
+.Order {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Order h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Table Styling */
+.Order table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* space between rows */
+}
+
+.Order th, .Order td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.Order th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Table rows as cards */
+.Order tbody tr {
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Order tbody tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Images */
+.Order table td img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.Order table td img:hover {
+  transform: scale(1.1);
+}
+
+/* Quantity & Price Cells */
+.Order table td {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Select Dropdown Styling */
+.Order select {
+  background-color: #f0f0f0;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Order select:hover {
+  background-color: #e0e0e0;
+}
+
+.Order select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+/* Delivered Row Blur Effect */
+.Order tbody tr.delivered {
+  background: rgba(0, 200, 83, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0,200,83,0.3);
+  box-shadow: 0 6px 20px rgba(0, 200, 83, 0.1);
+  transition: all 0.3s ease;
+}

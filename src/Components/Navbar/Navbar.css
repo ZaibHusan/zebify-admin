@@ -1,0 +1,66 @@
+/* NAVBAR MAIN CONTAINER */
+.Navbar {
+    height: 10vh;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+/* LOGO SECTION */
+.Navbar_logo {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Navbar_logo img {
+    width: 100%;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.Navbar_logo img:hover {
+    transform: scale(1.05);
+}
+
+/* SIGN IN BUTTON */
+.Navbar button {
+    background: #ff6600;
+    color: #fff;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.Navbar button:hover {
+    background: #e65c00;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE FOR MOBILE */
+@media (max-width: 400px) {
+    .Navbar {
+        padding: 12px 4%;
+    }
+
+    .Navbar_logo {
+        width: 130px;
+        height: 35px;
+    }
+
+    .Navbar button {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+}
